@@ -16,13 +16,9 @@ public class Demo {
         SportCar sportCar = new SportCar("Nissan GT-R","Sport car (S)",1740, sportDriver, sportEngine, 193.1);
 
         System.out.println("Lorry's info:");
-        System.out.print(lorry);
-        System.out.print(lorry.getEngine());
-        System.out.println(lorry.getDriver());
+        System.out.println(lorry);
 
         System.out.println("Sport car's info:");
-        System.out.print(sportCar);
-        System.out.print(sportCar.getEngine());
-        System.out.println(sportCar.getDriver());
+        System.out.println(sportCar);
     }
 }

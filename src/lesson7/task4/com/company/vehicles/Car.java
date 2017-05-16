@@ -76,8 +76,9 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car's model = '" + modelName + "\'\n" +
-                "Car's class = '" + modelClass + "\'\n" +
-                "Car's weight = " + weight + "\n";
+        return getDriver().toString() + getEngine().toString() +
+                "car's model = '" + modelName + "\'\n" +
+                "car's class = '" + modelClass + "\'\n" +
+                "car's weight = " + weight + "\n";
     }
 }

@@ -25,7 +25,7 @@ public class Engine {
 
     @Override
     public String toString() {
-        return "Engine model = " + getModel() + "\n" +
-                "Engine power = " + getPower() + "\n";
+        return "engine's model = " + getModel() + "\n" +
+                "engine's power = " + getPower() + "\n";
     }
 }

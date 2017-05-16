@@ -19,6 +19,6 @@ public class SportCar extends Car{
     @Override
     public String toString() {
         return super.toString() +
-                "maxSpeed = " + maxSpeed + " km/h\n";
+                "car's maxSpeed = " + maxSpeed + " km/h\n";
     }
 }

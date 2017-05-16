@@ -22,7 +22,7 @@ public class Driver extends Person {
 
     @Override
     public String toString() {
-        return "Driver's name = " + getFullName() + "\n" +
-                "Driver's experience = " + getWorkExperience() + " years\n";
+        return "driver's name = " + getFullName() + "\n" +
+                "driver's experience = " + getWorkExperience() + " years\n";
     }
 }

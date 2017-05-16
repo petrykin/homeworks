@@ -19,6 +19,6 @@ public class Lorry extends Car{
     @Override
     public String toString() {
         return super.toString() +
-                "carryWeight = " + carryWeight + " tonne\n";
+                "car's carryWeight = " + carryWeight + " tonne\n";
     }
 }
