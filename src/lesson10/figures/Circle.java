@@ -51,4 +51,22 @@ public class Circle extends Shape {
                 ", yCenter=" + yCenter +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Circle circle = (Circle) o;
+
+        if (xCenter != circle.xCenter) return false;
+        return yCenter == circle.yCenter;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = xCenter;
+        result = 31 * result + yCenter;
+        return result;
+    }
 }

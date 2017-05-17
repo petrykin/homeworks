@@ -75,4 +75,26 @@ public class Rectangle extends Shape {
                 ", width=" + width +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        if (top != rectangle.top) return false;
+        if (left != rectangle.left) return false;
+        if (height != rectangle.height) return false;
+        return width == rectangle.width;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = top;
+        result = 31 * result + left;
+        result = 31 * result + height;
+        result = 31 * result + width;
+        return result;
+    }
 }
