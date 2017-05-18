@@ -38,6 +38,27 @@ public class Flower {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flower flower = (Flower) o;
+
+        if (Double.compare(flower.cost, cost) != 0) return false;
+        return name.equals(flower.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name.hashCode();
+        temp = Double.doubleToLongBits(cost);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "Flower{" +
                 "name='" + name + '\'' +

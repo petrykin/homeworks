@@ -2,6 +2,7 @@ package lesson7.task2;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Matrix {
@@ -167,18 +168,6 @@ public class Matrix {
         return tmp;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < this.getRowsQuantity(); i++) {
-            for (int j = 0; j < this.getColumnsQuantity(); j++) {
-                sb.append(this.getElement(i, j));
-                sb.append("\t");
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
     public void print(String matrixName) {
         System.out.println("Matrix " + matrixName + ":");
         for (int i = 0; i < this.getRowsQuantity(); i++) {
@@ -199,5 +188,38 @@ public class Matrix {
             fw.write("\n");
         }
         fw.write("\n");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Matrix matrix = (Matrix) o;
+
+        if (rowsQuantity != matrix.rowsQuantity) return false;
+        if (columnsQuantity != matrix.columnsQuantity) return false;
+        return Arrays.deepEquals(m, matrix.m);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.deepHashCode(m);
+        result = 31 * result + rowsQuantity;
+        result = 31 * result + columnsQuantity;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < this.getRowsQuantity(); i++) {
+            for (int j = 0; j < this.getColumnsQuantity(); j++) {
+                sb.append(this.getElement(i, j));
+                sb.append("\t");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }

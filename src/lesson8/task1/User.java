@@ -146,6 +146,36 @@ public class User {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (readerCardNumber != user.readerCardNumber) return false;
+        if (!surName.equals(user.surName)) return false;
+        if (!name.equals(user.name)) return false;
+        if (!fatherName.equals(user.fatherName)) return false;
+        if (faculty != null ? !faculty.equals(user.faculty) : user.faculty != null) return false;
+        if (!birthDay.equals(user.birthDay)) return false;
+        if (phoneNumber != null ? !phoneNumber.equals(user.phoneNumber) : user.phoneNumber != null) return false;
+        return takenBooks != null ? takenBooks.equals(user.takenBooks) : user.takenBooks == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = readerCardNumber;
+        result = 31 * result + surName.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + fatherName.hashCode();
+        result = 31 * result + (faculty != null ? faculty.hashCode() : 0);
+        result = 31 * result + birthDay.hashCode();
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (takenBooks != null ? takenBooks.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "User{" +
                 "readerCardNumber=" + readerCardNumber +

@@ -75,6 +75,33 @@ public class Car {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        if (Double.compare(car.weight, weight) != 0) return false;
+        if (!modelName.equals(car.modelName)) return false;
+        if (!modelClass.equals(car.modelClass)) return false;
+        if (!driver.equals(car.driver)) return false;
+        return engine.equals(car.engine);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = modelName.hashCode();
+        result = 31 * result + modelClass.hashCode();
+        temp = Double.doubleToLongBits(weight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + driver.hashCode();
+        result = 31 * result + engine.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return getDriver().toString() + getEngine().toString() +
                 "car's model = '" + modelName + "\'\n" +

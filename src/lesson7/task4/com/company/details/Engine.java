@@ -24,6 +24,29 @@ public class Engine {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Engine engine = (Engine) o;
+
+        if (Double.compare(engine.power, power) != 0) return false;
+        if (!manufacturer.equals(engine.manufacturer)) return false;
+        return model.equals(engine.model);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = manufacturer.hashCode();
+        result = 31 * result + model.hashCode();
+        temp = Double.doubleToLongBits(power);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "engine's model = " + getModel() + "\n" +
                 "engine's power = " + getPower() + "\n";

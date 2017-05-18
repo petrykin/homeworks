@@ -21,6 +21,24 @@ public class Driver extends Person {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Driver)) return false;
+        if (!super.equals(o)) return false;
+
+        Driver driver = (Driver) o;
+
+        return workExperience == driver.workExperience;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + workExperience;
+        return result;
+    }
+
+    @Override
     public String toString() {
         return "driver's name = " + getFullName() + "\n" +
                 "driver's experience = " + getWorkExperience() + " years\n";
