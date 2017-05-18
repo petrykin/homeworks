@@ -9,22 +9,18 @@ public class Demo {
     public static void main(String[] args) {
         Rose[] roses = new Rose[1_000_000];
         for (int i = 0; i < roses.length; i++) {
-            roses[i] = new Rose(50 * Math.random());
+            roses[i] = new Rose();
         }
         Bouquet bouquet = new Bouquet(roses);
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
 
-        bouquet = new Bouquet(new Tulip(5), new Tulip(5),
-                new Tulip(5), new Aster(10), new Aster(10));
+        bouquet = new Bouquet(new Tulip(), new Tulip(),
+                new Tulip(), new Aster(), new Aster());
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
 
-
-        bouquet = new Bouquet(new Carnation(15), new Tulip(5),
-                new Lily(30), new Herbera(35), new Rose(40));
+        bouquet = new Bouquet(new Carnation(), new Tulip(),
+                new Lily(), new Herbera(), new Rose());
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
     }
 
     private static void printInfo(Bouquet bouquet) {

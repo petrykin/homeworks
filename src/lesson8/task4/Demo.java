@@ -10,15 +10,12 @@ public class Demo {
 
         Bouquet bouquet = market.getBouquet(ROSE, ROSE, ROSE, ROSE, ROSE);
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
 
-        bouquet = market.getBouquet(LILY, ORCHID, PEONY, ASTER, ASTER, LILY, LILY);
+        bouquet = market.getBouquet(LILY, CARNATION, TULIP, ASTER, ASTER, LILY, LILY);
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
 
         bouquet = market.getBouquet(ASTER, ASTER, ASTER);
         printInfo(bouquet);
-        Flower.printSoldFlowerInfo();
     }
 
     private static void printInfo(Bouquet bouquet) {
