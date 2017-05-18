@@ -1,4 +1,4 @@
-package lesson10.figures;
+package lesson10.task10;
 
 import java.awt.*;
 
