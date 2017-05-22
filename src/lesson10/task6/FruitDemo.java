@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static lesson10.task6.FruitMarket.Fruits.*;
-
 public class FruitDemo {
     public static void main(String[] args) {
         List<Fruit> fruits = new ArrayList<>();
@@ -17,9 +15,9 @@ public class FruitDemo {
 
     public static void printInfo(List<Fruit> fruits) {
         System.out.println("Было продано:");
-        System.out.printf("Яблок - %d шт (%.2f кг), за %.2f грн\n", Apple.getCount(), Apple.getTotalWeight(), Apple.getTotalCost(APPLE.getPrice()));
-        System.out.printf("Груш - %d шт (%.2f кг), за %.2f грн\n", Pear.getCount(), Pear.getTotalWeight(), Pear.getTotalCost(PEAR.getPrice()));
-        System.out.printf("Абрикос - %d шт (%.2f кг), за %.2f грн\n", Apricot.getCount(), Apricot.getTotalWeight(), Apricot.getTotalCost(APRICOT.getPrice()));
+        System.out.printf("Яблок - %d шт (%.2f кг), за %.2f грн\n", Apple.getCount(), Apple.getTotalWeight(), Apple.getTotalCost());
+        System.out.printf("Груш - %d шт (%.2f кг), за %.2f грн\n", Pear.getCount(), Pear.getTotalWeight(), Pear.getTotalCost());
+        System.out.printf("Абрикос - %d шт (%.2f кг), за %.2f грн\n", Apricot.getCount(), Apricot.getTotalWeight(), Apricot.getTotalCost());
         System.out.printf("Итоговая выручка: %.2f грн", getTotalCost(fruits));
     }
 
@@ -33,9 +31,12 @@ public class FruitDemo {
 
     public static Fruit getRandomFruit() {
         switch (new Random().nextInt(3)) {
-            case 0: return new Apple();
-            case 1: return new Pear();
-            default: return new Apricot();
+            case 0:
+                return new Apple(15);
+            case 1:
+                return new Pear(30);
+            default:
+                return new Apricot(50);
         }
     }
 }

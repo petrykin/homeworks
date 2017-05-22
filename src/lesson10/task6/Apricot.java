@@ -1,16 +1,21 @@
 package lesson10.task6;
 
-import static lesson10.task6.FruitMarket.Fruits.APRICOT;
-
 public class Apricot extends Fruit {
     private static int count;
     private static double totalWeight;
+    private static double totalCost;
 
     public Apricot() {
         super("Абрикос");
         setWeight(0.02 * (Math.random() + 1));
         totalWeight += getWeight();
         count++;
+    }
+
+    public Apricot(double price) {
+        this();
+        this.setPrice(price);
+        totalCost += getCost();
     }
 
     public static int getCount() {
@@ -21,13 +26,13 @@ public class Apricot extends Fruit {
         return totalWeight;
     }
 
-    public static double getTotalCost(double costPerKg) {
-        return getTotalWeight() * costPerKg;
+    public static double getTotalCost() {
+        return totalCost;
     }
 
     @Override
     public double getCost() {
-        return getWeight() * APRICOT.getPrice();
+        return getWeight() * this.getPrice();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package lesson10.task6;
 
 public abstract class Fruit {
+    private double price;
     private String name;
     private double weight;
 
@@ -26,6 +27,14 @@ public abstract class Fruit {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public abstract double getCost();
