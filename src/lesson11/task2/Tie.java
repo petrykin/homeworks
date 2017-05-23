@@ -1,7 +1,5 @@
 package lesson11.task2;
 
-import java.awt.*;
-
 public class Tie extends Clothes implements IMaleClothes{
     public Tie(Sizes size, String color) {
         super(size, color);

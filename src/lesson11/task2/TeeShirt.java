@@ -1,7 +1,5 @@
 package lesson11.task2;
 
-import javafx.scene.paint.Color;
-
 public class TeeShirt extends Clothes implements IMaleClothes, IFemaleClothes{
     public TeeShirt(Sizes size, String color) {
         super(size, color);
