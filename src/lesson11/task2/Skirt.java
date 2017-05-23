@@ -1,7 +1,5 @@
 package lesson11.task2;
 
-import java.awt.*;
-
 public class Skirt extends Clothes implements IFemaleClothes {
     public Skirt(Sizes size, String color) {
         super(size, color);

@@ -1,7 +1,5 @@
 package lesson11.task2;
 
-import java.awt.*;
-
 public class Demo {
     public static void main(String[] args) {
         Clothes[] clothes = {
