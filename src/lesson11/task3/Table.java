@@ -1,5 +1,7 @@
 package lesson11.task3;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.List;
@@ -32,6 +34,17 @@ public class Table {
         methods.add(new CheckingMethod("toString"));
         methods.add(new CheckingMethod("toString", 1));
         methods.add(new CheckingMethod("toString", 2));
+    }
+
+    public void toFile(String fileName) {
+        try (FileWriter fw = new FileWriter(fileName)){
+            fw.write(getHeader());
+            for (CheckingMethod method : methods) {
+                fw.write(getRow(method));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void printTable() {
