@@ -11,6 +11,10 @@ public class Person {
         this("", 0);
     }
 
+    public Person(String fullName) {
+        this(fullName, 0);
+    }
+
     public Person(String fullName, int age) {
         this.fullName = fullName;
         this.age = age;
