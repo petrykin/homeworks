@@ -18,7 +18,7 @@ public class Demo {
         System.out.printf("В данном тексте слов состоящих только из латинских букв %d:%n", words.size());
         String s = "";
         for (String word : words) {
-            s = !s.equals("") ? String.join(", ", s, word) : word;
+            s = !s.isEmpty() ? String.join(", ", s, word) : word;
         }
         System.out.println(s);
     }
