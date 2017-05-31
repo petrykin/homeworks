@@ -22,7 +22,7 @@ public class GMatrix<T extends Number> {
         Double[][] m = new Double[rowsQuantity][columnsQuantity];
         for (int i = 0; i < rowsQuantity; i++) {
             for (int j = 0; j < columnsQuantity; j++) {
-                m[i][j] = Double.valueOf(matrix[i][j].doubleValue() + a.getMatrix()[i][j].doubleValue());
+                m[i][j] = matrix[i][j].doubleValue() + a.getMatrix()[i][j].doubleValue();
             }
         }
         return new GMatrix(m);
@@ -36,7 +36,7 @@ public class GMatrix<T extends Number> {
         Double[][] m = new Double[rowsQuantity][columnsQuantity];
         for (int i = 0; i < rowsQuantity; i++) {
             for (int j = 0; j < columnsQuantity; j++) {
-                m[i][j] = Double.valueOf(a.doubleValue() * matrix[i][j].doubleValue());
+                m[i][j] = a.doubleValue() * matrix[i][j].doubleValue();
             }
         }
         return new GMatrix(m);
