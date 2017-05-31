@@ -2,7 +2,7 @@ package lesson13.task3;
 
 import java.util.Arrays;
 
-public class MinMax<T extends Comparable> {
+public class MinMax<T extends Comparable<T>> {
     private T[] arr;
 
     public MinMax(T[] arr) {
