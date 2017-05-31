@@ -1,16 +1,12 @@
 package lesson13.task3;
 
-import java.text.NumberFormat;
 import java.util.Arrays;
 
 public class MinMax<T extends Comparable> {
     private T[] arr;
-    private NumberFormat nf;
 
     public MinMax(T[] arr) {
         this.arr = arr;
-        nf = NumberFormat.getInstance();
-        nf.setMaximumFractionDigits(2);
     }
 
     public T getMinElement() {
