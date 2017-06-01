@@ -8,12 +8,12 @@ public class CalculatorDemo {
         printAllResults(getArrayOfCalcOperations());
     }
 
-    public  static double[] getArrayOfCalcOperations() {
+    public static double[] getArrayOfCalcOperations() {
         return new double[]{
                 Calculator.divide(54, 15.5),
-                Calculator.sum(5, 158L),
-                Calculator.multiply(8, 7.0),
-                Calculator.subtraction(17, 15)
+                Calculator.sum((short) 5, 158L),
+                Calculator.multiply((byte) 8, 7.0f),
+                Calculator.subtraction((long) 17, (short) 15)
         };
     }
 
