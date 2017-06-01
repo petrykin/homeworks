@@ -10,10 +10,10 @@ public class CalculatorDemo {
 
     public  static double[] getArrayOfCalcOperations() {
         return new double[]{
-                Calculator.divide(Integer.valueOf(54), Double.valueOf(15.5)),
-                Calculator.sum(Short.valueOf((short) 5), Long.valueOf(158L)),
-                Calculator.multiply(Byte.valueOf((byte)8), Float.valueOf((float)7.0)),
-                Calculator.subtraction(Integer.valueOf(17), Byte.valueOf((byte) 15))
+                Calculator.divide(54, 15.5),
+                Calculator.sum(5, 158L),
+                Calculator.multiply(8, 7.0),
+                Calculator.subtraction(17, 15)
         };
     }
 
