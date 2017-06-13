@@ -17,7 +17,7 @@ public class Demo {
         hdd = new Category("HDD", new Comparator<Item>() {
             @Override
             public int compare(Item o1, Item o2) {
-                return (int) (o1.getPrice() - o2.getPrice());
+                return Double.compare(o1.getPrice(), o2.getPrice());
             }
         });
         fillCategory(hdd);
@@ -26,7 +26,7 @@ public class Demo {
         hdd = new Category("HDD", new Comparator<Item>() {
             @Override
             public int compare(Item o1, Item o2) {
-                int ratingDiff = o1.getRating() - o2.getRating();
+                int ratingDiff =  Integer.compare(o1.getRating(), o2.getRating());
                 return ratingDiff != 0 ? ratingDiff : 1;
             }
         });
