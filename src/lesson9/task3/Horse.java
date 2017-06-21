@@ -1,6 +1,10 @@
 package lesson9.task3;
 
-public class Horse extends Animal {
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Horse extends Animal implements Serializable {
     private double weight;
 
     public Horse() {
@@ -8,6 +12,11 @@ public class Horse extends Animal {
 
     public Horse(String food, String location) {
         super(food, location);
+    }
+
+    public Horse(String food, String location, double weight) {
+        this(food, location);
+        this.weight = weight;
     }
 
     public double getWeight() {
@@ -51,8 +60,29 @@ public class Horse extends Animal {
     @Override
     public String toString() {
         return "Horse{" +
-                "food='" + getFood() + '\'' +
-                ", location='" + getLocation() + '\'' +
+                "food: '" + getFood() + '\'' +
+                ", location: '" + getLocation() + '\'' +
+                ", weight = " + weight +
                 '}';
+    }
+
+    private void writeObject(ObjectOutputStream os) {
+        try {
+            os.defaultWriteObject();
+            os.writeObject(getFood());
+            os.writeObject(getLocation());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void readObject(ObjectInputStream is) {
+        try {
+            is.defaultReadObject();
+            this.setFood((String) is.readObject());
+            this.setLocation((String) is.readObject());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
