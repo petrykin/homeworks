@@ -62,7 +62,7 @@ public class Info extends JFrame implements ActionListener {
         String path = text.getText();
         File pathFile = new File(path);
         leftPanel.removeAll();
-        JTree dirTree = new JTree(directoryTree(pathFile));
+        JTree dirTree = new JTree(directoryTree(pathFile, true));
         dirTree.addTreeSelectionListener(e1 -> {
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) dirTree.getLastSelectedPathComponent();
             if (selectedNode != null) {
@@ -80,15 +80,18 @@ public class Info extends JFrame implements ActionListener {
         leftPanel.revalidate();
     }
 
-    public DefaultMutableTreeNode directoryTree(File file) {
+    public DefaultMutableTreeNode directoryTree(File file, boolean isRoot) {
         if (!file.exists()) return new DefaultMutableTreeNode("directory doesn't exist");
-        DefaultMutableTreeNode root = new DefaultMutableTreeNode(file.getName().equals("") ? file.getPath() : file.getName());
-        String[] list = file.list();
+        String path = file.getName().equals("") ? file.getPath() : file.getName();
+        if (isRoot) {
+            path = file.getPath();
+        }
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode(path);
+        File[] list = file.listFiles();
         if (list != null) {
-            for (String s : list) {
-                File subFile = new File(file.getPath() + "\\" + s);
+            for (File subFile : list) {
                 if (subFile.isDirectory()) {
-                    root.add(directoryTree(subFile));
+                    root.add(directoryTree(subFile, false));
                 } else {
                     root.add(new DefaultMutableTreeNode(subFile.getName()));
                 }
