@@ -1,7 +1,5 @@
 package lesson8.task4;
 
-import java.util.Locale;
-
 public abstract class Flower {
     private String name;
 

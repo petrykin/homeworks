@@ -3,7 +3,7 @@ package lesson8.task1;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-import static java.lang.Integer.*;
+import static java.lang.Integer.parseInt;
 
 public class Demo {
     public static int cardNumber = 10005;

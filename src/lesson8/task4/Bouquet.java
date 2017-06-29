@@ -1,7 +1,6 @@
 package lesson8.task4;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class Bouquet {
