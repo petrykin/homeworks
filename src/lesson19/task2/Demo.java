@@ -11,11 +11,6 @@ public class Demo {
         };
         for (MyThread thread : threads) {
             thread.start();
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                System.err.print(e);
-            }
         }
     }
 }
