@@ -9,7 +9,7 @@ import java.util.Set;
 public class ItemDAO {
     public Set<Item> getAll() {
         Set<Item> itemSet = new HashSet<>();
-        String fileName = "/home/storm/Documents/uits/homeworks/src/lesson16/task2/model/db/items.db";
+        String fileName = "src\\lesson16\\task2\\model\\db\\items.db";
         try (
                 FileReader fr = new FileReader(fileName);
                 BufferedReader br = new BufferedReader(fr)

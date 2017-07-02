@@ -47,7 +47,7 @@ public class ReportController {
     public static void toLogFile(User user) {
         Date currentTime = new Date();
         String s = user.getLogin() + '_' + new SimpleDateFormat("ddMMyy_HHmm").format(currentTime) + ".txt";
-        try (PrintWriter pw = new PrintWriter("/home/storm/Documents/uits/homeworks/src/lesson16/task2/salechecks/" + s)) {
+        try (PrintWriter pw = new PrintWriter("src\\lesson16\\task2\\salechecks\\" + s)) {
             pw.printf("%S %2$td %2$tB %2$tY г.\n\n", "товарный чек от", currentTime);
             pw.printf("%-15s %s\n", "поставщик:", "Petrykin's MINI-SHOP LTD");
             pw.printf("%-15s %s\n\n", "покупатель:", user.getLogin());

@@ -7,7 +7,7 @@ import java.io.*;
 
 public class BucketController {
     public static boolean serializeBucket(User user) {
-        String fileName = "/home/storm/Documents/uits/homeworks/src/lesson16/task2/serializes/" + user.getLogin() + "Bucket.ser";
+        String fileName = "src\\lesson16\\task2\\serializes\\" + user.getLogin() + "Bucket.ser";
         try (
                 FileOutputStream fos = new FileOutputStream(fileName);
                 ObjectOutputStream os = new ObjectOutputStream(fos)
@@ -20,7 +20,7 @@ public class BucketController {
     }
 
     public static boolean deserializeBucket(User user) {
-        String fileName = "/home/storm/Documents/uits/homeworks/src/lesson16/task2/serializes/" + user.getLogin() + "Bucket.ser";
+        String fileName = "src\\lesson16\\task2\\serializes\\" + user.getLogin() + "Bucket.ser";
         try (
                 FileInputStream fis = new FileInputStream(fileName);
                 ObjectInputStream is = new ObjectInputStream(fis)
