@@ -11,7 +11,7 @@ public class Fork {
     }
 
     public synchronized void take() {
-        while (isBusy) {
+        if (isBusy) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -20,17 +20,9 @@ public class Fork {
         }
         System.out.println(Thread.currentThread().getName() + " схватил вилку " + id);
         isBusy = true;
-        notify();
     }
 
     public synchronized void drop() {
-        while (!isBusy) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
         System.out.println(Thread.currentThread().getName() + " бросил вилку " + id);
         isBusy = false;
         notify();
