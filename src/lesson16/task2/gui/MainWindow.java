@@ -122,14 +122,14 @@ public class MainWindow extends JFrame implements MouseListener {
         for (Category category : CategoryController.categories()) {
             cb.addItem(category.getName());
         }
-        session.setCurrentCategory(Category.byName(cb.getSelectedItem().toString()));
+        session.setCurrentCategory(Category.valueOf(cb.getSelectedItem().toString()));
         tableModel = new MyTableModel(ItemController.itemsByCategory(session.getCurrentCategory()));
         itemsTable.setModel(tableModel);
         itemTableBucketPanel.repaint();
         itemTableBucketPanel.revalidate();
         cb.addActionListener(e -> {
             sbg.clearSelection();
-            session.setCurrentCategory(Category.byName(cb.getSelectedItem().toString()));
+            session.setCurrentCategory(Category.valueOf(cb.getSelectedItem().toString()));
             tableModel = new MyTableModel(ItemController.itemsByCategory(session.getCurrentCategory()));
             itemsTable.setModel(tableModel);
             itemTableBucketPanel.repaint();
