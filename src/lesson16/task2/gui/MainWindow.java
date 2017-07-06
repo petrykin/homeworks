@@ -16,6 +16,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static lesson16.task2.model.Category.ALL;
+import static lesson16.task2.model.Category.VIDEOCARD;
 
 public class MainWindow extends JFrame implements MouseListener {
     private JPanel rootPanel = new JPanel();
@@ -122,14 +123,14 @@ public class MainWindow extends JFrame implements MouseListener {
         for (Category category : CategoryController.categories()) {
             cb.addItem(category.getName());
         }
-        session.setCurrentCategory(Category.valueOf(cb.getSelectedItem().toString()));
+        session.setCurrentCategory(Category.byName(cb.getSelectedItem().toString()));
         tableModel = new MyTableModel(ItemController.itemsByCategory(session.getCurrentCategory()));
         itemsTable.setModel(tableModel);
         itemTableBucketPanel.repaint();
         itemTableBucketPanel.revalidate();
         cb.addActionListener(e -> {
             sbg.clearSelection();
-            session.setCurrentCategory(Category.valueOf(cb.getSelectedItem().toString()));
+            session.setCurrentCategory(Category.byName(cb.getSelectedItem().toString()));
             tableModel = new MyTableModel(ItemController.itemsByCategory(session.getCurrentCategory()));
             itemsTable.setModel(tableModel);
             itemTableBucketPanel.repaint();

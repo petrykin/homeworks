@@ -16,6 +16,15 @@ public enum Category implements Serializable {
         this.name = name;
     }
 
+    public static Category byName(String name) {
+        for (Category category : Category.values()) {
+            if (category.getName().equals(name)) {
+                return category;
+            }
+        }
+        return null;
+    }
+
     public String getName() {
         return name;
     }

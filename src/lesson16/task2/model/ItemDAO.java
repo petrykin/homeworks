@@ -16,7 +16,7 @@ public class ItemDAO {
         ) {
             br.lines().forEach(s -> {
                 String[] data = s.split(":");
-                itemSet.add(new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Category.valueOf(data[3])));
+                itemSet.add(new Item(data[0], Double.parseDouble(data[1]), Integer.parseInt(data[2]), Category.byName(data[3])));
             });
         } catch (IOException e) {
             e.printStackTrace();
