@@ -1,8 +1,6 @@
 # homeworks
 Репозиторий для выполненных домашних заданий по курсу "Основы Java" [Ukrainian IT School](http://uitschool.com/)
 
-**Tasks:**
-
 **Lesson 1 - Введение в Java, байткод, пакеты, запуск первого приложения**
 <p><ol>
     <li>Установка JDK (Java Development Kit).
