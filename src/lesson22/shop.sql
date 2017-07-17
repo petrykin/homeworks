@@ -4,18 +4,18 @@ USE `shop`;
 
 CREATE TABLE `shop`.`categories` (
   `category_id` INT(5) NOT NULL AUTO_INCREMENT,
-  `categoryName` VARCHAR(100) CHARACTER SET 'utf8' NULL,
+  `name` VARCHAR(100) CHARACTER SET 'utf8' NULL,
   PRIMARY KEY (`category_id`));
   
-INSERT INTO categories (categoryName) 
+INSERT INTO categories (name) 
 VALUES ('ALL'), ('VIDEOCARD'), ('CPU'), ('MOTHERBOARD'),
 	   ('MEMORY'), ('HDD'), ('POWER'), ('SOUNDCARD');
 
 CREATE TABLE `shop`.`items` (
   `item_id` INT(5) NOT NULL AUTO_INCREMENT,
-  `itemName` VARCHAR(100) NOT NULL,
-  `itemCost` DECIMAL(10,2) NOT NULL DEFAULT 0.0,
-  `itemRank` INT(2) NULL DEFAULT 0,
+  `name` VARCHAR(100) NOT NULL,
+  `cost` DECIMAL(10,2) NOT NULL DEFAULT 0.0,
+  `rank` INT(2) NULL DEFAULT 0,
   `category_id` INT(5) NOT NULL,
   PRIMARY KEY (`item_id`),
   INDEX `category_id_idx` (`category_id` ASC),
@@ -28,18 +28,18 @@ DEFAULT CHARACTER SET = utf8;
     
 CREATE TABLE `shop`.`users` (
   `user_id` INT(5) NOT NULL AUTO_INCREMENT,
-  `userLogin` VARCHAR(20) NOT NULL,
-  `userPassword` VARCHAR(20) NOT NULL,
+  `login` VARCHAR(20) NOT NULL,
+  `password` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`user_id`))
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO users (userLogin, userPassword) 
+INSERT INTO users (login, password) 
 VALUES ('petrykin', 'petrykin'), ('milkina', 'milkina');
 
 CREATE TABLE `shop`.`buckets` (
   `user_id` INT(5) NOT NULL,
   `item_id` INT(5) NOT NULL,
-  `itemQuantity` INT(100) NOT NULL DEFAULT 1,
+  `quantity` INT(100) NOT NULL DEFAULT 1,
   INDEX `user_id_idx` (`user_id` ASC),
   INDEX `item_id_idx` (`item_id` ASC),
   CONSTRAINT `user_id`
@@ -54,7 +54,7 @@ CREATE TABLE `shop`.`buckets` (
     ON UPDATE NO ACTION)
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO items (itemName, itemCost, itemRank, category_id) 
+INSERT INTO items (name, cost, rank, category_id) 
 VALUES ('Gigabyte GeForce GTX 1060 Windforce OC 3G 1797MHz', 12232.0, 5, 2),
 	   ('MSI GeForce GTX 1060 Gaming X 6G 1809MHz (912-V328-006)', 13822.0, 6, 2),
        ('MSI GeForce GTX 1050 Ti Gaming X 4G 1379MHz (912-V335-005)', 7467.0, 9, 2),
