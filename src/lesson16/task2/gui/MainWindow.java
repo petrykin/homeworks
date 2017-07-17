@@ -92,9 +92,7 @@ public class MainWindow extends JFrame implements MouseListener {
 
         btnOut.setText("Выйти");
         btnOut.addActionListener(e -> {
-            if (!session.getCurrentUser().getBucket().isEmpty()) {
-                BucketController.serializeBucket(session.getCurrentUser());
-            }
+            BucketController.serializeBucket(session.getCurrentUser());
             session.newUser("", "");
             userLabel.setText("Пользователь: " + session.getCurrentUserName());
             getBtnPanel();

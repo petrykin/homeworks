@@ -30,7 +30,8 @@ CREATE TABLE `shop`.`users` (
   `user_id` INT(5) NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(20) NOT NULL,
   `password` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`user_id`))
+  PRIMARY KEY (`user_id`),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC))
 DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO users (login, password) 
