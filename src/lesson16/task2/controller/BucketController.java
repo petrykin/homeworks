@@ -1,13 +1,10 @@
 package lesson16.task2.controller;
 
-import lesson16.task2.model.*;
+import lesson16.task2.model.Bucket;
+import lesson16.task2.model.BucketDAO;
+import lesson16.task2.model.User;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Map;
 
 public class BucketController {
     public static boolean serializeBucket(User user, String serFileName) {
